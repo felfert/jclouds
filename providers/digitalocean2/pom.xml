@@ -28,9 +28,9 @@
   </parent>
 
   <groupId>org.apache.jclouds.provider</groupId>
-  <artifactId>digitalocean2</artifactId>
+  <artifactId>digitalocean2-fixed</artifactId>
   <name>jclouds DigitalOcean v2 API Provider</name>
-  <description>jclouds provider for Digital Ocean v2 Compute API</description>
+  <description>jclouds provider for Digital Ocean v2 Compute API, with backported fixes</description>
 
   <properties>
     <test.digitalocean2.endpoint>https://api.digitalocean.com/v2/</test.digitalocean2.endpoint>
