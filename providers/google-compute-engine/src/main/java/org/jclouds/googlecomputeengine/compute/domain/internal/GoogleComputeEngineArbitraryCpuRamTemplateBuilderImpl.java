@@ -29,7 +29,7 @@ import org.jclouds.domain.Location;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import java.net.URI;
 import java.util.Set;
 

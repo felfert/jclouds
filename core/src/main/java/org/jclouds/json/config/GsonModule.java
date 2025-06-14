@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import org.jclouds.date.DateService;

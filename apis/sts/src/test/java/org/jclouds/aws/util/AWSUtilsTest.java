@@ -27,7 +27,7 @@ import static org.testng.Assert.assertNull;
 import java.io.IOException;
 import java.io.InputStream;
 
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.aws.domain.AWSError;
 import org.jclouds.aws.filters.FormSignerV2Test;

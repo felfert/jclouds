@@ -24,7 +24,7 @@ import java.util.Map;
 
 import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.logging.Logger;
 import org.jclouds.ovf.Disk;

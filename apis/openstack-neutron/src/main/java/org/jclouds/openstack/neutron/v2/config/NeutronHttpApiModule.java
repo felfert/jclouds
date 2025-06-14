@@ -22,7 +22,7 @@ import java.net.URI;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import org.jclouds.http.HttpErrorHandler;

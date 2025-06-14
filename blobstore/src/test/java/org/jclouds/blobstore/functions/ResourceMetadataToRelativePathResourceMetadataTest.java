@@ -18,7 +18,7 @@ package org.jclouds.blobstore.functions;
 
 import static org.testng.Assert.assertEquals;
 
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.blobstore.domain.MutableBlobMetadata;
 import org.jclouds.blobstore.domain.StorageMetadata;

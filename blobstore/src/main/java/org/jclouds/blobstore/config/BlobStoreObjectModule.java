@@ -17,7 +17,7 @@
 package org.jclouds.blobstore.config;
 
 import jakarta.inject.Inject;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.blobstore.domain.Blob;
 import org.jclouds.blobstore.domain.MutableBlobMetadata;

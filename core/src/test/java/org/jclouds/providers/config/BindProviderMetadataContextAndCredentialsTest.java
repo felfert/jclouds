@@ -53,7 +53,7 @@ public class BindProviderMetadataContextAndCredentialsTest {
 
    @SuppressWarnings("unused")
    private static class ExpectedBindings {
-      private final jakarta.inject.Provider<Context> backend;
+      private final javax.inject.Provider<Context> backend;
       private final ProviderMetadata providerMetadata;
       private final Credentials creds;
       private final String providerId;
@@ -63,7 +63,7 @@ public class BindProviderMetadataContextAndCredentialsTest {
       private final String buildVersion;
 
       @Inject
-      private ExpectedBindings(@Provider jakarta.inject.Provider<Context> backend, ProviderMetadata providerMetadata,
+      private ExpectedBindings(@Provider javax.inject.Provider<Context> backend, ProviderMetadata providerMetadata,
             @Provider Supplier<Credentials> creds, @Provider String providerId, @Iso3166 Set<String> iso3166Codes,
             @Api String apiId, @ApiVersion String apiVersion, @Nullable @BuildVersion String buildVersion,
             @Provider TypeToken<? extends Context> backendToken, FilterStringsBoundToInjectorByName filter) {

@@ -25,7 +25,7 @@ import static org.jclouds.s3.reference.S3Constants.TEMPORARY_SIGNATURE_PARAM;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import org.jclouds.crypto.Crypto;

@@ -19,7 +19,7 @@ package org.jclouds.servermanager.compute.functions;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import jakarta.inject.Inject;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import org.jclouds.domain.Location;

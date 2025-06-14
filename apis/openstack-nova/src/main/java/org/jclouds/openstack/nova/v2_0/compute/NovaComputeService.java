@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import org.jclouds.Constants;

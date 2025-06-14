@@ -33,7 +33,7 @@ import com.google.inject.Inject;
 
 @Singleton
 public class GetLoginForProviderFromPropertiesAndStoreCredentialsOrReturnNull implements
-      jakarta.inject.Provider<LoginCredentials> {
+      javax.inject.Provider<LoginCredentials> {
    private final ValueOfConfigurationKeyOrNull config;
    private final String provider;
    private final Map<String, Credentials> credentialStore;

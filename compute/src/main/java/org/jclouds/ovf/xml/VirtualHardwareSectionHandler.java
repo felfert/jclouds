@@ -23,7 +23,7 @@ import static org.jclouds.util.SaxUtils.equalsOrSuffix;
 import java.util.Map;
 
 import jakarta.inject.Inject;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.cim.xml.ResourceAllocationSettingDataHandler;
 import org.jclouds.cim.xml.VirtualSystemSettingDataHandler;

@@ -66,7 +66,7 @@ public class KeystoneHttpApiModule extends HttpApiModule<KeystoneApi> {
 
    @Provides
    @Singleton
-   public final LoadingCache<String, Set<? extends Extension>> provideExtensionsByRegion(final jakarta.inject.Provider<KeystoneApi> keystoneApi) {
+   public final LoadingCache<String, Set<? extends Extension>> provideExtensionsByRegion(final javax.inject.Provider<KeystoneApi> keystoneApi) {
       return CacheBuilder.newBuilder().expireAfterWrite(23, TimeUnit.HOURS)
             .build(CacheLoader.from(Suppliers.memoize(new Supplier<Set<? extends Extension>>() {
                @Override

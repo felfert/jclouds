@@ -60,7 +60,7 @@ import java.util.regex.Pattern;
 import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import com.google.common.base.Strings;
 import org.jclouds.blobstore.ContainerNotFoundException;

@@ -31,7 +31,7 @@ import java.util.Map.Entry;
 import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import com.google.common.collect.ImmutableList;

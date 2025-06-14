@@ -55,7 +55,7 @@ public class ShareUrl implements Function<String, URI> {
 
    private final Supplier<Credentials> creds;
    private final Supplier<URI> provider;
-   private final jakarta.inject.Provider<Long> timeStampProvider;
+   private final javax.inject.Provider<Long> timeStampProvider;
    private final Crypto crypto;
 
    @Resource
@@ -67,7 +67,7 @@ public class ShareUrl implements Function<String, URI> {
 
    @Inject
    public ShareUrl(@Provider Supplier<Credentials> creds, @Provider Supplier<URI> provider,
-         @TimeStamp jakarta.inject.Provider<Long> timeStampProvider, Crypto crypto) {
+         @TimeStamp javax.inject.Provider<Long> timeStampProvider, Crypto crypto) {
       this.creds = creds;
       this.provider = provider;
       this.timeStampProvider = timeStampProvider;

@@ -20,7 +20,7 @@ import java.util.Set;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.collect.Memoized;
 import org.jclouds.compute.domain.Hardware;

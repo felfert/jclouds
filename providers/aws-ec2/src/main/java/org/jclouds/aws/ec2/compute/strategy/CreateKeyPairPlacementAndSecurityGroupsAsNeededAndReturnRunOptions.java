@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentMap;
 import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import org.jclouds.aws.ec2.AWSEC2Api;

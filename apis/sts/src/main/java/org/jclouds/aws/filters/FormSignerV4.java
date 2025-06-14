@@ -91,11 +91,11 @@ public final class FormSignerV4 implements FormSigner {
 
    private final String apiVersion;
    private final Supplier<Credentials> creds;
-   private final jakarta.inject.Provider<String> iso8601Timestamp;
+   private final javax.inject.Provider<String> iso8601Timestamp;
    private final ServiceAndRegion serviceAndRegion;
 
    @Inject FormSignerV4(@ApiVersion String apiVersion, @Provider Supplier<Credentials> creds,
-         @TimeStamp jakarta.inject.Provider<String> iso8601Timestamp, ServiceAndRegion serviceAndRegion) {
+         @TimeStamp javax.inject.Provider<String> iso8601Timestamp, ServiceAndRegion serviceAndRegion) {
       this.apiVersion = apiVersion;
       this.creds = creds;
       this.iso8601Timestamp = iso8601Timestamp;

@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Set;
 
 import jakarta.inject.Inject;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.inject.Singleton;
 
 import org.jclouds.blobstore.BlobStoreContext;

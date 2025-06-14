@@ -81,7 +81,7 @@ public abstract class BaseEC2ApiTest<T> extends BaseRestAnnotationProcessingTest
          return "2009-11-08T15:54:08.897Z";
       }
 
-      static class Zones implements jakarta.inject.Provider<Map<String, String>> {
+      static class Zones implements javax.inject.Provider<Map<String, String>> {
          @Override
          public Map<String, String> get() {
             return ImmutableMap.<String, String> of("us-east-1a", "us-east-1");

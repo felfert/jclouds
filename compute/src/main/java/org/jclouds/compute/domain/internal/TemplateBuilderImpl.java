@@ -49,7 +49,7 @@ import org.jclouds.logging.Logger;
 import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;

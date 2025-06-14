@@ -23,7 +23,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import java.security.PrivateKey;
 
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 import jakarta.ws.rs.HttpMethod;
 
 import org.jclouds.ContextBuilder;

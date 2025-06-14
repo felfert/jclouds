@@ -19,7 +19,7 @@ package org.jclouds.ovf.xml;
 import static org.jclouds.util.SaxUtils.currentOrNull;
 import static org.jclouds.util.SaxUtils.equalsOrSuffix;
 
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.http.functions.ParseSax;
 import org.jclouds.ovf.Section;

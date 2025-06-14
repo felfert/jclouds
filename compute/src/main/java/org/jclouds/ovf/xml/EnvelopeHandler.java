@@ -17,7 +17,7 @@
 package org.jclouds.ovf.xml;
 
 import jakarta.inject.Inject;
-import jakarta.inject.Provider;
+import javax.inject.Provider;
 
 import org.jclouds.ovf.Envelope;
 import org.jclouds.ovf.VirtualSystem;
