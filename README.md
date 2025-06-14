@@ -10,3 +10,8 @@ License
 Copyright (C) 2009-2022 The Apache Software Foundation
 
 Licensed under the Apache License, Version 2.0
+
+This fork
+---------
+Is intended for usage in jenkins jclouds-plugin. Therefore, it is focused on compatibility to jenkins.
+For example: this fork uses guice-6.0.0 instead of 7.0.0.
