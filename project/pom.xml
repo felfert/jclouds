@@ -20,12 +20,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>14</version>
+    <groupId>com.github.felfert</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.10</version>
     <relativePath />
   </parent>
-  <groupId>org.apache.jclouds</groupId>
+
+  <groupId>com.github.felfert.jclouds</groupId>
   <artifactId>jclouds-project</artifactId>
   <version>2.7.1-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -84,33 +85,6 @@
     <url>https://gitbox.apache.org/repos/asf?p=jclouds.git</url>
     <tag>HEAD</tag>
   </scm>
-
-  <repositories>
-    <repository>
-      <id>apache-snapshots</id>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
-  <!-- to allow downstream projects to access jclouds-resources in plugin config -->
-  <pluginRepositories>
-    <pluginRepository>
-      <id>apache-snapshots</id>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
 
   <developers>
     <developer>
@@ -207,10 +181,17 @@
         <role>Committer</role>
       </roles>
     </developer>
+    <developer>
+      <name>Fritz Elfert</name>
+      <id>felfert</id>
+      <roles>
+        <role>Committer</role>
+      </roles>
+    </developer>
   </developers>
 
   <properties>
-    <jdk.version>11</jdk.version>
+    <jdk.version>17</jdk.version>
     <maven.compile.source>${jdk.version}</maven.compile.source>
     <maven.compile.target>${jdk.version}</maven.compile.target>
     <maven.compile.deprecation>true</maven.compile.deprecation>
@@ -225,6 +206,7 @@
     <guava.version>33.4.0-jre</guava.version>
     <guice.version>6.0.0</guice.version>
 
+    <bouncycastle.version>1.81</bouncycastle.version>
     <okhttp.version>3.14.9</okhttp.version>
     <auto-factory.version>1.1.0</auto-factory.version>
     <auto-service.version>1.1.1</auto-service.version>
@@ -423,6 +405,11 @@
         <artifactId>jsr305</artifactId>
         <version>${jsr305.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk18on</artifactId>
+        <version>${bouncycastle.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -478,14 +465,22 @@
       </testResource>
     </testResources>
     <plugins>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
         <version>3.0.0-M7</version>
         <configuration>
-          <useReleaseProfile>false</useReleaseProfile>
           <goals>deploy</goals>
-          <arguments>-Pdoc -Papache-release ${arguments}</arguments>
+          <arguments>-Pdoc,src</arguments>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <configuration>
+          <autoPublish>false</autoPublish>
         </configuration>
       </plugin>
 
@@ -558,6 +553,8 @@
               <includes>
                 <include>**/*IntegrationTest.java</include>
               </includes>
+              <redirectTestOutputToFile>true</redirectTestOutputToFile>
+              <reportsDirectory>${project.build.directory}/test-reports</reportsDirectory>
             </configuration>
           </execution>
         </executions>
@@ -583,6 +580,8 @@
             <jclouds.wire.httpstream.url>${jclouds.wire.httpstream.url}</jclouds.wire.httpstream.url>
             <jclouds.wire.httpstream.md5>${jclouds.wire.httpstream.md5}</jclouds.wire.httpstream.md5>
           </systemPropertyVariables>
+          <redirectTestOutputToFile>true</redirectTestOutputToFile>
+          <reportsDirectory>${project.build.directory}/test-reports</reportsDirectory>
         </configuration>
       </plugin>
       <plugin>
@@ -865,6 +864,7 @@
       </plugins>
     </pluginManagement>
   </build>
+
   <profiles>
     <profile>
       <id>live</id>
@@ -909,6 +909,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>jclouds-project</id>
       <activation>
@@ -949,6 +950,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>not-jclouds-project</id>
       <activation>
@@ -963,7 +965,7 @@
             <artifactId>maven-checkstyle-plugin</artifactId>
             <dependencies>
               <dependency>
-                <groupId>org.apache.jclouds</groupId>
+                <groupId>com.github.felfert.jclouds</groupId>
                 <artifactId>jclouds-resources</artifactId>
                 <version>${project.version}</version>
               </dependency>
@@ -984,7 +986,7 @@
             <artifactId>modernizer-maven-plugin</artifactId>
             <dependencies>
               <dependency>
-                <groupId>org.apache.jclouds</groupId>
+                <groupId>com.github.felfert.jclouds</groupId>
                 <artifactId>jclouds-resources</artifactId>
                 <version>${project.version}</version>
               </dependency>
@@ -1000,6 +1002,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>doc</id>
       <build>
@@ -1027,6 +1030,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>src</id>
       <build>
@@ -1047,5 +1051,6 @@
         </plugins>
       </build>
     </profile>
+
   </profiles>
 </project>

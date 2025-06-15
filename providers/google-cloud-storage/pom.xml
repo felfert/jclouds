@@ -21,13 +21,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.apache.jclouds</groupId>
+        <groupId>com.github.felfert.jclouds</groupId>
         <artifactId>jclouds-project</artifactId>
         <version>2.7.1-SNAPSHOT</version>
         <relativePath>../../project/pom.xml</relativePath>
     </parent>
 
-    <groupId>org.apache.jclouds.provider</groupId>
+    <groupId>com.github.felfert.jclouds.provider</groupId>
     <artifactId>google-cloud-storage</artifactId>
     <name>jclouds Google Cloud Storage provider</name>
     <description>jclouds components to access Google Cloud Storage</description>
@@ -44,32 +44,32 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.jclouds</groupId>
+            <groupId>com.github.felfert.jclouds</groupId>
             <artifactId>jclouds-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds.common</groupId>
+            <groupId>com.github.felfert.jclouds.common</groupId>
             <artifactId>googlecloud</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds.common</groupId>
+            <groupId>com.github.felfert.jclouds.common</groupId>
             <artifactId>googlecloud</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds.api</groupId>
+            <groupId>com.github.felfert.jclouds.api</groupId>
             <artifactId>oauth</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds</groupId>
+            <groupId>com.github.felfert.jclouds</groupId>
             <artifactId>jclouds-blobstore</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -85,27 +85,27 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds</groupId>
+            <groupId>com.github.felfert.jclouds</groupId>
             <artifactId>jclouds-blobstore</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds</groupId>
+            <groupId>com.github.felfert.jclouds</groupId>
             <artifactId>jclouds-core</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds.driver</groupId>
+            <groupId>com.github.felfert.jclouds.driver</groupId>
             <artifactId>jclouds-slf4j</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.jclouds.driver</groupId>
+            <groupId>com.github.felfert.jclouds.driver</groupId>
             <artifactId>jclouds-okhttp</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
