@@ -31,7 +31,7 @@
   <version>2.7.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Apache jclouds Project</name>
-  <url>https://jclouds.apache.org/</url>
+  <url>https://github.com/felfert/jclouds/</url>
   <description>Apache jclouds: Concurrent API for Cloud Services</description>
   <inceptionYear>2009</inceptionYear>
 
@@ -45,39 +45,10 @@
 
 
   <issueManagement>
-    <system>JIRA</system>
-    <url>https://issues.apache.org/jira/browse/JCLOUDS</url>
+    <system>GitHub</system>
+    <url>https://github.com/felfert/jclouds/issues</url>
   </issueManagement>
 
-
-  <mailingLists>
-    <mailingList>
-      <name>User List</name>
-      <subscribe>user-subscribe@jclouds.apache.org</subscribe>
-      <unsubscribe>user-unsubscribe@jclouds.apache.org</unsubscribe>
-      <post>user@jclouds.apache.org</post>
-      <archive>https://mail-archives.apache.org/mod_mbox/jclouds-user/</archive>
-    </mailingList>
-    <mailingList>
-      <name>Developer List</name>
-      <subscribe>dev-subscribe@jclouds.apache.org</subscribe>
-      <unsubscribe>dev-unsubscribe@jclouds.apache.org</unsubscribe>
-      <post>dev@jclouds.apache.org</post>
-      <archive>https://mail-archives.apache.org/mod_mbox/jclouds-dev/</archive>
-    </mailingList>
-    <mailingList>
-      <name>Commits List</name>
-      <subscribe>commits-subscribe@jclouds.apache.org</subscribe>
-      <unsubscribe>commits-unsubscribe@jclouds.apache.org</unsubscribe>
-      <archive>https://mail-archives.apache.org/mod_mbox/jclouds-commits/</archive>
-    </mailingList>
-    <mailingList>
-      <name>Issues List</name>
-      <subscribe>issues-subscribe@jclouds.apache.org</subscribe>
-      <unsubscribe>issues-unsubscribe@jclouds.apache.org</unsubscribe>
-      <archive>https://mail-archives.apache.org/mod_mbox/jclouds-issues/</archive>
-    </mailingList>
-  </mailingLists>
 
   <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">
     <connection>scm:git:https://github.com/felfert/jclouds.git</connection>
@@ -480,7 +451,7 @@
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
         <configuration>
-          <autoPublish>false</autoPublish>
+          <autoPublish>true</autoPublish>
         </configuration>
       </plugin>
 
