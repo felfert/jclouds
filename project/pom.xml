@@ -542,6 +542,10 @@
             <configuration>
               <argLine>-Xmx512m -Xms256m -Djava.awt.headless=true -Xss256k</argLine>
               <parallel>tests</parallel>
+              <forkCount>1</forkCount>
+              <environmentVariables>
+                <TZ>GMT</TZ> <!-- Some tests rely on TZ being GMT -->
+              </environmentVariables>
               <threadCount>5</threadCount>
               <!-- note that the groups/excluded groups don't work due to some problem
                    in surefire or testng. instead, we have to exclude via file path
@@ -560,6 +564,10 @@
         </executions>
         <configuration>
           <parallel>methods</parallel>
+          <forkCount>1</forkCount>
+          <environmentVariables>
+            <TZ>GMT</TZ> <!-- Some tests rely on TZ being GMT -->
+          </environmentVariables>
           <threadCount>5</threadCount>
           <!-- note that the groups/excluded groups don't work due to some problem
                in surefire or testng. instead, we have to exclude via file path
