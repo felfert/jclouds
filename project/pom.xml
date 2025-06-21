@@ -28,7 +28,7 @@
 
   <groupId>com.github.felfert.jclouds</groupId>
   <artifactId>jclouds-project</artifactId>
-  <version>2.7.1</version>
+  <version>2.7.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Apache jclouds Project</name>
   <url>https://jclouds.apache.org/</url>
@@ -83,7 +83,7 @@
     <connection>scm:git:https://github.com/felfert/jclouds.git</connection>
     <developerConnection>scm:git:git@github.com:felfert/jclouds.git</developerConnection>
     <url>https://github.com/felfert/jclouds</url>
-    <tag>jclouds-2.7.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
@@ -195,7 +195,7 @@
     <maven.compile.source>${jdk.version}</maven.compile.source>
     <maven.compile.target>${jdk.version}</maven.compile.target>
     <maven.compile.deprecation>true</maven.compile.deprecation>
-    <project.build.outputTimestamp>1750538349</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1750538823</project.build.outputTimestamp>
 
     <!-- Plugin versions -->
     <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
