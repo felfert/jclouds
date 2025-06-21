@@ -15,6 +15,9 @@ is intended for usage in jenkins jclouds-plugin. Therefore, it is focused on com
 For example: this fork uses guice-6.0.0 instead of 7.0.0. Since apache's JIRA is now readonly, this
 repos has enabled its own github issue tracker.
 
+### Release 2.7.2 just fixes a few URLs
+Some URLs in the project meatadata (JIRA and main site) were still pointing to the retired project.
+
 ### First public release is the bugfix release 2.7.1
 
 It provides several bugfixes which did not make it into any release before the project was retired:
