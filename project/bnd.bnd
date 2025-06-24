@@ -14,7 +14,7 @@ Implementation-Vendor: \
     jclouds
 
 Implementation-Vendor-Id: \
-    org.apache.jclouds
+    com.github.felfert.jclouds
 
 Implementation-Version: \
     ${project.version}
