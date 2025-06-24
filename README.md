@@ -1,3 +1,5 @@
+[![javadoc](https://javadoc.io/badge2/com.github.felfert.jclouds/jclouds/javadoc.svg)](https://javadoc.io/doc/com.github.felfert.jclouds/jclouds) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/felfert/jclouds/ci.yaml)
+
 # jclouds
 
 Apache jclouds was an open source multi-cloud toolkit for the Java platform that gives you the freedom to create applications that are portable across clouds while giving you full control to use cloud-specific features.
