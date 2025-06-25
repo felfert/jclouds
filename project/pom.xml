@@ -173,7 +173,7 @@
     <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
 
     <!-- General dependency versions -->
-    <gson.version>2.11.0</gson.version>
+    <gson.version>2.13.1</gson.version>
     <guava.version>33.4.0-jre</guava.version>
     <guice.version>6.0.0</guice.version>
 
@@ -719,10 +719,14 @@
               <exclude>**/DISCLAIMER</exclude>
               <exclude>**/BUILD.txt</exclude>
               <exclude>**/CHANGES.txt</exclude>
+              <exclude>**/CHANGELOG.md</exclude>
               <exclude>**/README.md</exclude>
               <exclude>**/README.txt</exclude>
               <exclude>**/DEPENDENCIES</exclude>
               <exclude>**/CONTRIBUTING.md</exclude>
+
+              <!-- github stuff -->
+              <exclude>.github/**/**</exclude>
 
               <!-- reference data lists -->
               <exclude>**/*json</exclude>
