@@ -169,7 +169,7 @@
     <project.build.outputTimestamp>1750783973</project.build.outputTimestamp>
 
     <!-- Plugin versions -->
-    <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
     <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
 
     <!-- General dependency versions -->
