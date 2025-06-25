@@ -56,7 +56,7 @@ public class NullFilteringTypeAdapterFactories {
    }
 
    static <T> TypeToken<?> resolve(TypeToken<T> ownerType, Type param) {
-      return TypeToken.get(com.google.gson.internal.$Gson$Types.resolve(ownerType.getType(), ownerType.getRawType(),
+      return TypeToken.get(com.google.gson.internal.GsonTypes.resolve(ownerType.getType(), ownerType.getRawType(),
             param));
    }
 
