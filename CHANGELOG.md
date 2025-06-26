@@ -1,5 +1,12 @@
-### Version 2.7.4 (TBD)
+### Version 2.7.4
 - Bump up gson to 2.13.1 to match jenkins
+- Bump up maven-jar-plugin to 3.4.2
+- Bump up duplicate-finder-maven-plugin to 2.0.1
+- Bump up maven-javadoc-plugin to 3.3.1
+- Bump up maven-resources-plugin to 3.3.1
+- Bump up github actions checkout to 4
+- Add separate CHANGELOG
+- Activcate dependabot
 ### Version 2.7.3
 - Add aggregated javadoc jar
 - Fixed overlooked change of groupId in resource
