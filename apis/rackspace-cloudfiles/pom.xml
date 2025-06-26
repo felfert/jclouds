@@ -22,13 +22,13 @@
   <parent>
     <groupId>com.github.felfert.jclouds</groupId>
     <artifactId>jclouds-project</artifactId>
-    <version>2.7.4</version>
+    <version>2.7.5-SNAPSHOT</version>
     <relativePath>../../project/pom.xml</relativePath>
   </parent>
   
   <groupId>com.github.felfert.jclouds.api</groupId>
   <artifactId>rackspace-cloudfiles</artifactId>
-  <version>2.7.4</version>
+  <version>2.7.5-SNAPSHOT</version>
   <name>jclouds rackspace-cloudfiles api</name>
   <description>jclouds components to access Rackspace Cloud Files</description>
 
