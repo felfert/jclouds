@@ -25,6 +25,6 @@ So to use this new version with maven, use a snippet like this in your pom.xml:
     <dependency>
       <groupId>com.github.felfert.jclouds</groupId>
       <artifactId>jclouds-allcompute</artifactId>
-      <version>2.7.1</version>
+      <version>2.7.4</version>
     </dependency>
 ```
