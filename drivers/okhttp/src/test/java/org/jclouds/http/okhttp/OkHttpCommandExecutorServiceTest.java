@@ -168,7 +168,7 @@ public class OkHttpCommandExecutorServiceTest extends BaseHttpCommandExecutorSer
       }
    }
 
-   @Test(expectedExceptions = HttpResponseException.class, expectedExceptionsMessageRegExp = "Unable to find acceptable protocols.*")
+   @Test(expectedExceptions = IllegalStateException.class, expectedExceptionsMessageRegExp = "CLEARTEXT-only client.*")
    public void testSSLConnectionFailsIfOnlyHttpConfigured() throws Exception {
       MockWebServer server = mockWebServer(new MockResponse());
       server.useHttps(sslSocketFactory(), false);
@@ -234,7 +234,7 @@ public class OkHttpCommandExecutorServiceTest extends BaseHttpCommandExecutorSer
 
    protected static MockWebServer mockWebServer(MockResponse... responses) throws IOException {
       MockWebServer server = new MockWebServer();
-      server.start(null, 0);
+      server.start(0);
       for (MockResponse response : responses) {
          server.enqueue(response);
       }

@@ -1,3 +1,10 @@
+### Version 2.7.5-SNAPSHOT
+- Bump up snakeyaml to 2.5
+- Bump up okhttp to 4.12.0
+- Bump up okio to 3.16.3
+- Bump up actions/setup-java to 5
+- Bump up actions/checkout to 5
+- Bump up build-helper-maven-plugin to 3.6.1
 ### Version 2.7.4
 - Bump up gson to 2.13.1 to match jenkins
 - Bump up maven-jar-plugin to 3.4.2

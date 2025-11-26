@@ -31,7 +31,7 @@
   <description>OkHttp Driver</description>
 
   <properties>
-    <okio.version>3.16.0</okio.version>
+    <okio.version>3.16.3</okio.version>
   </properties>
 
   <dependencies>
@@ -51,6 +51,22 @@
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>okhttp</artifactId>
       <version>${okhttp.version}</version>
+      <exclusions>
+        <!--  prefer newer kotlin-stdlib from okio -->
+        <exclusion>
+          <groupId>org.jetbrains.kotlin</groupId>
+          <artifactId>kotlin-stdlib</artifactId>
+        </exclusion>
+        <!--  Remove old kotlin-stdlib-jdk7 and -jdk8 -->
+        <exclusion>
+          <groupId>org.jetbrains.kotlin</groupId>
+          <artifactId>kotlin-stdlib-jdk7</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.jetbrains.kotlin</groupId>
+          <artifactId>kotlin-stdlib-jdk8</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.squareup.okio</groupId>
