@@ -1,4 +1,6 @@
-### Version 2.7.5-SNAPSHOT
+### Version 2.7.5
+- Replace bcprov-ext-jdk18on 1.78 by bcprov-jdk18on 1.81
+- Bunp shrinkwrap-depchain to 1.2.6
 - Bump up snakeyaml to 2.5
 - Bump up okhttp to 4.12.0
 - Bump up okio to 3.16.3
