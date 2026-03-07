@@ -1,4 +1,4 @@
-[![javadoc](https://javadoc.io/badge2/com.github.felfert.jclouds/jclouds/javadoc.svg)](https://javadoc.io/doc/com.github.felfert.jclouds/jclouds) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/felfert/jclouds/ci.yaml)
+[![javadoc](https://javadoc.io/badge2/com.github.felfert.jclouds/jclouds/javadoc.svg)](https://javadoc.io/doc/com.github.felfert.jclouds/jclouds) [![CI](https://github.com/felfert/jclouds/actions/workflows/ci.yaml/badge.svg)](https://github.com/felfert/jclouds/actions/workflows/ci.yaml)
 
 # jclouds
 
