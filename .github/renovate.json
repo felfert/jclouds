@@ -2,5 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ]
+  ],
+  "ignoreDeps": [
+      "bcprov-jdk18on",
+      "guice", "guice-assistedinjects",
+      "jaxb-runtime",
+      "snakeyaml"
+  ],
+  "labels": ["dependencies"]
 }
