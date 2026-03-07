@@ -127,8 +127,8 @@ public class CreateRunScript extends StatementList {
       userCommands.add("cd " + pwd);
       for (Statement statement : statements) {
          if (statement instanceof Call
-               || (statement instanceof StatementList && any(StatementList.class.cast(statement).delegate(),
-                     instanceOf(Call.class)))) {
+               || statement instanceof StatementList && any(StatementList.class.cast(statement).delegate(),
+                     instanceOf(Call.class))) {
             statement = new ExitInsteadOfReturn(statement);
          }
          userCommands.addAll(Splitter.on('\n').split(statement.render(OsFamily.UNIX)));

@@ -276,8 +276,8 @@ public class NamingStrategies {
       <T> String translateName(Invokable<T, T> c, int index) {
          String name = null;
 
-         if ((markers.contains(ConstructorProperties.class) && c.getAnnotation(ConstructorProperties.class) != null)
-               || (markers.contains(SerializedNames.class) && c.getAnnotation(SerializedNames.class) != null)) {
+         if (markers.contains(ConstructorProperties.class) && c.getAnnotation(ConstructorProperties.class) != null
+               || markers.contains(SerializedNames.class) && c.getAnnotation(SerializedNames.class) != null) {
 
             String[] names = c.getAnnotation(SerializedNames.class) != null
                   ? c.getAnnotation(SerializedNames.class).value()

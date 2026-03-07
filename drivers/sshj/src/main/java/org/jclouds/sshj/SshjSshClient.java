@@ -204,7 +204,7 @@ public class SshjSshClient implements SshClient {
             if (i + 1 == sshRetries) {
                throw propagate(from, errorMessage + " (out of retries - max " + sshRetries + ")");
             } else if (shouldRetry(from)
-                     || (Throwables2.getFirstThrowableOfType(from, IllegalStateException.class) != null)) {
+                     || Throwables2.getFirstThrowableOfType(from, IllegalStateException.class) != null) {
                logger.info("<< " + errorMessage + " (attempt " + (i + 1) + " of " + sshRetries + "): "
                         + from.getMessage());
                backoffForAttempt(i + 1, errorMessage + ": " + from.getMessage());
@@ -376,8 +376,8 @@ public class SshjSshClient implements SshClient {
 
                @Override
                public boolean apply(Throwable arg0) {
-                  return (arg0.toString().indexOf(input) != -1)
-                           || (arg0.getMessage() != null && arg0.getMessage().indexOf(input) != -1);
+                  return arg0.toString().indexOf(input) != -1
+                           || arg0.getMessage() != null && arg0.getMessage().indexOf(input) != -1;
                }
 
             });

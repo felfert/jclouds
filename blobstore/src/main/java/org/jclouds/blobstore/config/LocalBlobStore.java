@@ -227,7 +227,7 @@ public final class LocalBlobStore implements BlobStore {
          throw new IllegalArgumentException("Cannot set both prefix and directory");
       }
 
-      if ((options.getDir() != null || options.isRecursive()) && (options.getDelimiter() != null)) {
+      if ((options.getDir() != null || options.isRecursive()) && options.getDelimiter() != null) {
          throw new IllegalArgumentException("Cannot set the delimiter if directory or recursive is set");
       }
 
@@ -266,7 +266,7 @@ public final class LocalBlobStore implements BlobStore {
             contents = filterDirectory(contents, options);
          } else if (!Strings.isNullOrEmpty(options.getPrefix())) {
             contents = filterPrefix(contents, options);
-         } else if (!options.isRecursive() || (options.getDelimiter() != null)) {
+         } else if (!options.isRecursive() || options.getDelimiter() != null) {
             String delimiter = options.getDelimiter() == null ? storageStrategy.getSeparator() : options.getDelimiter();
             contents = extractCommonPrefixes(contents, delimiter, null);
          }

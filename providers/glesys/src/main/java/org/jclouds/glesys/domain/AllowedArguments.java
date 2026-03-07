@@ -114,7 +114,7 @@ public class AllowedArguments {
 		if (this == obj) {
 			return true;
 		}
-		if ((obj == null) || (getClass() != obj.getClass())) {
+		if (obj == null || getClass() != obj.getClass()) {
 			return false;
 		}
 		AllowedArguments that = AllowedArguments.class.cast(obj);

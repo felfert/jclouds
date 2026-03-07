@@ -75,7 +75,7 @@ public class JschSshClientLiveTest {
    public SshClient setupClient() throws NumberFormatException, FileNotFoundException, IOException {
       int port = Integer.parseInt(sshPort);
       if (sshUser == null
-            || ((sshPass == null || sshPass.trim().equals("")) && (sshKeyFile == null || sshKeyFile.trim().equals("")))
+            || (sshPass == null || sshPass.trim().equals("")) && (sshKeyFile == null || sshKeyFile.trim().equals(""))
             || sshUser.trim().equals("")) {
          System.err.println("ssh credentials not present.  Tests will be lame");
          return new SshClient() {

@@ -58,7 +58,7 @@ public class OfferingApiLiveTest extends BaseCloudStackApiLiveTest {
            assert offering.getName() != null : offering;
            assert offering.getCreated() != null : offering;
            assert offering.getDisplayText() != null : offering;
-           assert offering.getDiskSize() > 0 || (offering.getDiskSize() == 0 && offering.isCustomized()) : offering;
+           assert offering.getDiskSize() > 0 || offering.getDiskSize() == 0 && offering.isCustomized() : offering;
            assert offering.getTags() != null : offering;
 
          } catch (NoSuchElementException e) {

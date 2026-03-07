@@ -135,7 +135,7 @@ public class EC2HardwareBuilder extends HardwareBuilder {
       return this;
    }
 
-   public EC2HardwareBuilder virtualizationTypes(VirtualizationType ...virtualizationTypes) {
+   public EC2HardwareBuilder virtualizationTypes(VirtualizationType...virtualizationTypes) {
       Preconditions.checkNotNull(virtualizationTypes, "virtualizationTypes");
       Preconditions.checkArgument(virtualizationTypes.length > 0, "At least one virtualization type is required.");
       if (virtualizationTypes.length == 1) {

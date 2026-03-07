@@ -293,7 +293,7 @@ public final class GoogleCloudStorageBlobStore extends BaseBlobStore {
    protected boolean deleteAndVerifyContainerGone(String container) {
       ListPageWithPrefixes<GoogleCloudStorageObject> list = api.getObjectApi().listObjects(container);
 
-      if (list == null || (!list.iterator().hasNext() && list.prefixes().isEmpty())) {
+      if (list == null || !list.iterator().hasNext() && list.prefixes().isEmpty()) {
          if (!api.getBucketApi().deleteBucket(container)) {
             return true;
          } else {

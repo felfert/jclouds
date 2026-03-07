@@ -91,11 +91,11 @@ public class SwitchArg implements Statement, AcceptsStatementVisitor {
                actionBuilder.append(INDENT);
             actionBuilder.append(line).append(ShellToken.LF.to(family));
             if (line.indexOf(CreateRunScript.DELIMITER) != -1) {
-               inRunScript = inRunScript ? false : true;
+               inRunScript = !inRunScript;
 
             }
             if (line.indexOf(AppendFile.DELIMITER) != -1) {
-               inCreateFile = inCreateFile ? false : true;
+               inCreateFile = !inCreateFile;
             }
             shouldIndent = !inCreateFile && !inRunScript;
 

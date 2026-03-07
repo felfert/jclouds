@@ -51,7 +51,7 @@ public class GlacierError {
    }
 
    public boolean isValid() {
-      return (this.code != null) && (this.message != null) && (this.type != null);
+      return this.code != null && this.message != null && this.type != null;
    }
 
    @Override

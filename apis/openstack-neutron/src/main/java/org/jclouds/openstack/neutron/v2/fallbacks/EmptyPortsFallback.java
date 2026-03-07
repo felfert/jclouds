@@ -29,7 +29,7 @@ import org.jclouds.rest.ResourceNotFoundException;
 public class EmptyPortsFallback implements Fallback<Ports> {
    @Override
    public Ports createOrPropagate(Throwable t) throws Exception {
-      if ((getFirstThrowableOfType(checkNotNull(t, "throwable"), ResourceNotFoundException.class) != null)
+      if (getFirstThrowableOfType(checkNotNull(t, "throwable"), ResourceNotFoundException.class) != null
             || contains404(t)) {
          return Ports.EMPTY;
       }

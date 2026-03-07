@@ -29,7 +29,7 @@ import org.jclouds.rest.ResourceNotFoundException;
 public class EmptyNetworksFallback implements Fallback<Networks> {
    @Override
    public Networks createOrPropagate(Throwable t) throws Exception {
-      if ((getFirstThrowableOfType(checkNotNull(t, "throwable"), ResourceNotFoundException.class) != null)
+      if (getFirstThrowableOfType(checkNotNull(t, "throwable"), ResourceNotFoundException.class) != null
             || contains404(t)) {
          return Networks.EMPTY;
       }

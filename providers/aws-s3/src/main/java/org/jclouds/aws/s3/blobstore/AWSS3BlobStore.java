@@ -82,8 +82,8 @@ public class AWSS3BlobStore extends S3BlobStore {
    public String putBlob(String container, Blob blob, PutOptions options) {
       if (options.isMultipart()) {
          return putMultipartBlob(container, blob, options);
-      } else if ((options instanceof AWSS3PutOptions) &&
-         (((AWSS3PutOptions) options).getStorageClass() == REDUCED_REDUNDANCY)) {
+      } else if (options instanceof AWSS3PutOptions &&
+         ((AWSS3PutOptions) options).getStorageClass() == REDUCED_REDUNDANCY) {
          return putBlobWithReducedRedundancy(container, blob);
 
       } else {

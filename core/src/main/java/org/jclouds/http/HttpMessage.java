@@ -146,7 +146,7 @@ public class HttpMessage extends PayloadEnclosingImpl {
        *
        * @see HttpMessage#getHeaders()
        */
-      public T addHeader(String name, String ... values) {
+      public T addHeader(String name, String...values) {
          this.headers.putAll(checkNotNull(name, "name"), checkNotNull(values, "values of %s", name));
          return self();
       }
@@ -156,7 +156,7 @@ public class HttpMessage extends PayloadEnclosingImpl {
        *
        * @see HttpMessage#getHeaders()
        */
-      public T replaceHeader(String name, String ... values) {
+      public T replaceHeader(String name, String...values) {
          checkNotNull(name, "name");
          checkNotNull(values, "values of %s", name);
          return replaceHeaders(ImmutableMultimap.<String, String> builder().putAll(name, values).build());

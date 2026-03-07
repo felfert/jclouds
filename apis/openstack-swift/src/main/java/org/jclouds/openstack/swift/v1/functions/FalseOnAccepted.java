@@ -25,6 +25,6 @@ public class FalseOnAccepted implements Function<HttpResponse, Boolean> {
 
    @Override
    public Boolean apply(HttpResponse from) {
-      return from.getStatusCode() == 202 ? false : true;
+      return from.getStatusCode() != 202;
    }
 }

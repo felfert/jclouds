@@ -245,7 +245,7 @@ public final class CreateNodesWithGroupEncodedIntoNameThenAddToSet extends
 
    // Helper function for simplifying an array of ports to a list of ranges FirewallOptions expects.
    public static List<String> simplifyPorts(int[] ports){
-      if ((ports == null) || (ports.length == 0)) {
+      if (ports == null || ports.length == 0) {
          return null;
       }
       ArrayList<String> output = new ArrayList<String>();
@@ -254,7 +254,7 @@ public final class CreateNodesWithGroupEncodedIntoNameThenAddToSet extends
       int range_start = ports[0];
       int range_end = ports[0];
       for (int i = 1; i < ports.length; i++) {
-         if ((ports[i - 1] == ports[i] - 1) || (ports[i - 1] == ports[i])){
+         if (ports[i - 1] == ports[i] - 1 || ports[i - 1] == ports[i]){
             // Range continues.
             range_end = ports[i];
          }

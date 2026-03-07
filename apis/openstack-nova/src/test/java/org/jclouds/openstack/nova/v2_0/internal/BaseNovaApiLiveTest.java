@@ -103,8 +103,8 @@ public class BaseNovaApiLiveTest extends BaseApiLiveTest<NovaApi> {
    protected void blockUntilServerInState(String serverId, ServerApi api, Status status) {
       Server currentDetails = null;
       for (currentDetails = api.get(serverId); currentDetails.getStatus() != status
-               || ((currentDetails.getExtendedStatus().isPresent() && currentDetails.getExtendedStatus().get()
-                        .getTaskState() != null)); currentDetails = api.get(serverId)) {
+               || currentDetails.getExtendedStatus().isPresent() && currentDetails.getExtendedStatus().get()
+                        .getTaskState() != null; currentDetails = api.get(serverId)) {
          System.out.printf("blocking on status %s%n%s%n", status, currentDetails);
          try {
             Thread.sleep(15 * 1000);

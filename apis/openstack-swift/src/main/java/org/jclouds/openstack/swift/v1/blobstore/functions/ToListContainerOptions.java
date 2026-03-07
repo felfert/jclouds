@@ -32,7 +32,7 @@ public class ToListContainerOptions implements
       if (from.getDir() != null && from.getPrefix() != null) {
          throw new IllegalArgumentException("Cannot set both directory and prefix");
       }
-      if ((from.getDir() != null || from.isRecursive()) && (from.getDelimiter() != null)) {
+      if ((from.getDir() != null || from.isRecursive()) && from.getDelimiter() != null) {
          throw new IllegalArgumentException("Cannot set both delimiter and recursive or directory");
       }
       org.jclouds.openstack.swift.v1.options.ListContainerOptions options = new org.jclouds.openstack.swift.v1.options.ListContainerOptions();

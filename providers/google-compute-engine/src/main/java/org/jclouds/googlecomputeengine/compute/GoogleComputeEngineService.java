@@ -120,7 +120,7 @@ public final class GoogleComputeEngineService extends BaseComputeService {
 
       for (Firewall firewall : concat(firewallApi.list())) {
          String foundGroup = namingScheme.groupInUniqueNameOrNull(firewall.name());
-         if ((foundGroup != null) && foundGroup.equals(groupName)){
+         if (foundGroup != null && foundGroup.equals(groupName)){
             AtomicReference<Operation> operation = Atomics.newReference(firewallApi.delete(firewall.name()));
             operationDone.apply(operation);
 

@@ -537,7 +537,7 @@ public class TemplateBuilderImpl implements TemplateBuilder {
    }
 
    private boolean currentLocationWiderThan(Location location) {
-      return this.location == null || (location != null && this.location.getScope().compareTo(location.getScope()) < 0);
+      return this.location == null || location != null && this.location.getScope().compareTo(location.getScope()) < 0;
    }
 
    /**

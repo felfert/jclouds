@@ -67,8 +67,8 @@ public class BindRegionToXmlPayload extends BindToStringPayload {
       String value = null;
       String defaultRegionForService = defaultRegionForServiceSupplier.get();
       Set<String> regions = regionsSupplier.get();
-      if ((defaultRegionForService == null && constraint == null)
-            || (defaultRegionForService != null && defaultRegionForService.equals(constraint))) {
+      if (defaultRegionForService == null && constraint == null
+            || defaultRegionForService != null && defaultRegionForService.equals(constraint)) {
          // nothing to bind as this is default.
          return request;
       } else if (regions.contains(constraint)) {

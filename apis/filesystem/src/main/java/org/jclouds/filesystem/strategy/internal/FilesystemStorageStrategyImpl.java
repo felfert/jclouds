@@ -915,11 +915,11 @@ public class FilesystemStorageStrategyImpl implements LocalStorageStrategy {
 
       // search for separator chars
       if (!onlyTrailing) {
-         if (pathToBeCleaned.charAt(0) == '/' || (pathToBeCleaned.charAt(0) == '\\' && isWindows()))
+         if (pathToBeCleaned.charAt(0) == '/' || pathToBeCleaned.charAt(0) == '\\' && isWindows())
             beginIndex = 1;
       }
       if (pathToBeCleaned.charAt(pathToBeCleaned.length() - 1) == '/' ||
-            (pathToBeCleaned.charAt(pathToBeCleaned.length() - 1) == '\\' && isWindows()))
+            pathToBeCleaned.charAt(pathToBeCleaned.length() - 1) == '\\' && isWindows())
          endIndex--;
 
       return pathToBeCleaned.substring(beginIndex, endIndex);

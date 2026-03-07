@@ -89,7 +89,7 @@ public interface VaultApi {
 
    static class PrependSlashOrEmptyString implements Function<Object, String> {
       public String apply(Object from) {
-         if ((from == null) || (from.toString().length() == 0)) {
+         if (from == null || from.toString().length() == 0) {
             return "";
          } else {
             return "/" + from.toString();

@@ -29,7 +29,7 @@ import org.jclouds.rest.ResourceNotFoundException;
 public class EmptyFloatingIPsFallback implements Fallback<FloatingIPs> {
    @Override
    public FloatingIPs createOrPropagate(Throwable t) throws Exception {
-      if ((getFirstThrowableOfType(checkNotNull(t, "throwable"), ResourceNotFoundException.class) != null)
+      if (getFirstThrowableOfType(checkNotNull(t, "throwable"), ResourceNotFoundException.class) != null
             || contains404(t)) {
          return FloatingIPs.EMPTY;
       }

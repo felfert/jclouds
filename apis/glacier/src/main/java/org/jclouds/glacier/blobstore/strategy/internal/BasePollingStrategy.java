@@ -54,12 +54,12 @@ public class BasePollingStrategy implements PollingStrategy {
 
    private boolean inProgress(String job, String vault) {
       JobMetadata jobMetadata = client.describeJob(vault, job);
-      return (jobMetadata != null) && (jobMetadata.getStatusCode() == JobStatus.IN_PROGRESS);
+      return jobMetadata != null && jobMetadata.getStatusCode() == JobStatus.IN_PROGRESS;
    }
 
    private boolean succeeded(String job, String vault) {
       JobMetadata jobMetadata = client.describeJob(vault, job);
-      return (jobMetadata != null) && (jobMetadata.getStatusCode() == JobStatus.SUCCEEDED);
+      return jobMetadata != null && jobMetadata.getStatusCode() == JobStatus.SUCCEEDED;
    }
 
    @Override

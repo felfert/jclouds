@@ -108,9 +108,9 @@ public class ParseAWSErrorFromXmlContent implements HttpErrorHandler {
             else if (errorCode != null && (errorCode.indexOf("NotFound") != -1 || errorCode.endsWith(".Unknown")))
                exception = new ResourceNotFoundException(message, exception);
             else if ("IncorrectState".equals(errorCode)
-                     || (errorCode != null && (error.getCode().endsWith(".Duplicate") 
-                              || error.getCode().endsWith(".InUse") || error.getCode().equals("DependencyViolation")))
-                     || (message != null && (message.indexOf("already exists") != -1 || message.indexOf("is in use") != -1)))
+                     || errorCode != null && (error.getCode().endsWith(".Duplicate") 
+                              || error.getCode().endsWith(".InUse") || error.getCode().equals("DependencyViolation"))
+                     || message != null && (message.indexOf("already exists") != -1 || message.indexOf("is in use") != -1))
                exception = new IllegalStateException(message, exception);
             else if (errorCode != null && errorCode.indexOf("AuthFailure") != -1)
                exception = new AuthorizationException(message, exception);

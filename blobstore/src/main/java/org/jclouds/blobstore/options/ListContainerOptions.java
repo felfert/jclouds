@@ -31,7 +31,7 @@ import com.google.common.base.Objects;
  * import static org.jclouds.blobstore.options.ListContainerOptions.Builder.*
  * <p/>
  * BlobStore connection = // get connection
- * Future<ListResponse<ResourceMetadata>> list = connection.list("container",prefix("home/users").maxResults(1000));
+ * Future&lt;ListResponse&lt;ResourceMetadata&gt;&gt; list = connection.list("container",prefix("home/users").maxResults(1000));
  * <code>
  */
 public class ListContainerOptions extends ListOptions implements Cloneable {
@@ -318,7 +318,7 @@ public class ListContainerOptions extends ListOptions implements Cloneable {
       if (getClass() != obj.getClass())
          return false;
       ListContainerOptions other = (ListContainerOptions) obj;
-      return (detailed == other.detailed) &&
+      return detailed == other.detailed &&
                recursive == other.recursive &&
                Objects.equal(dir, other.dir) &&
                Objects.equal(prefix, other.prefix) &&

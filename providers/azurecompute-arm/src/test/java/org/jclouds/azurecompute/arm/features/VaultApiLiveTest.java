@@ -104,7 +104,7 @@ public class VaultApiLiveTest extends BaseAzureComputeApiLiveTest {
       // see if the vault has been deleted or not
       Vault vault = api().getVault(vaultName);
       if (vault != null) {
-         if ((vault.properties().enableSoftDelete() != null) && vault.properties().enableSoftDelete()) {
+         if (vault.properties().enableSoftDelete() != null && vault.properties().enableSoftDelete()) {
             api().deleteVault(vaultName);
             checkState(deletedVaultStatus.create(resourceGroupName, true).apply(vaultName),
                     "vault was not deleted before timeout");

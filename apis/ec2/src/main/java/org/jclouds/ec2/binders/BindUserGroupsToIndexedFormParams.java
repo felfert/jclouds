@@ -43,7 +43,7 @@ public class BindUserGroupsToIndexedFormParams implements Binder {
    private void checkValidUserGroup(Object input) {
       Iterable<?> values = (Iterable<?>) input;
       long size = Iterables.size(values);
-      checkArgument(size == 0 || (size == 1 && Iterables.getOnlyElement(values).equals("all")),
+      checkArgument(size == 0 || size == 1 && Iterables.getOnlyElement(values).equals("all"),
             "only supported UserGroup is 'all'");
    }
 

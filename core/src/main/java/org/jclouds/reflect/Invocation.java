@@ -49,7 +49,7 @@ public final class Invocation {
     */
    public static Invocation create(Invokable<?, ?> invokable) {
       checkArgument(
-            invokable.getParameters().isEmpty() || (invokable.getParameters().size() == 1 && invokable.isVarArgs()),
+            invokable.getParameters().isEmpty() || invokable.getParameters().size() == 1 && invokable.isVarArgs(),
             "please specify arguments to %s", invokable);
       return create(invokable, ImmutableList.of());
    }

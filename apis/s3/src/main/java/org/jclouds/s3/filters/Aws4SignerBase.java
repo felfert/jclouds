@@ -139,8 +139,8 @@ public abstract class Aws4SignerBase {
 
       // if the port is defined and doesn't match the URI scheme
       if (port != -1) {
-         if (("http".equalsIgnoreCase(scheme) && port != 80) ||
-                 ("https".equalsIgnoreCase(scheme) && port != 443)) {
+         if ("http".equalsIgnoreCase(scheme) && port != 80 ||
+                 "https".equalsIgnoreCase(scheme) && port != 443) {
             host += ":" + port; // append the port number to the hostname
          }
       }

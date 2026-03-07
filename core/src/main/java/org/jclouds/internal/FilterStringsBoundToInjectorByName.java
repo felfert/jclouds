@@ -57,7 +57,7 @@ public class FilterStringsBoundToInjectorByName implements Function<Predicate<St
             Annotation annotation = input.getKey().getAnnotation();
             if (annotation == null)
                return false;
-            return (annotation instanceof jakarta.inject.Named) || (annotation instanceof com.google.inject.name.Named);
+            return annotation instanceof jakarta.inject.Named || annotation instanceof com.google.inject.name.Named;
          }
 
       });

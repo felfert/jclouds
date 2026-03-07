@@ -159,7 +159,7 @@ public class DockerTemplateOptions extends TemplateOptions implements Cloneable 
     * Compares two Config.Builder instances.
     */
    private boolean buildersEqual(Config.Builder b1, Config.Builder b2) {
-      return b1 == b2 || (b1 != null && b2 != null && b1.build().equals(b2.build()));
+      return b1 == b2 || b1 != null && b2 != null && b1.build().equals(b2.build());
    }
 
    @Override
