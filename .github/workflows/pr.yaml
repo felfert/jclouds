@@ -31,4 +31,4 @@ jobs:
           distribution: temurin
           cache: maven
       - name: Build
-        run: mvn -B -Dstyle.color=always clean verify checkstyle:checkstyle
+        run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle
