@@ -804,7 +804,7 @@
                   <dependency>
                     <groupId>com.google.appengine</groupId>
                     <artifactId>appengine-testing</artifactId>
-                    <version>1.6.5</version>
+                    <version>5.0.0</version>
                     <scope>test</scope>
                   </dependency>
                 </conflictingDependencies>
