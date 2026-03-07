@@ -171,6 +171,7 @@
     <!-- Plugin versions -->
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
     <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
+    <animal-sniffer.version>1.27</animal-sniffer.version>
 
     <!-- General dependency versions -->
     <gson.version>2.13.1</gson.version>
@@ -381,6 +382,12 @@
         <artifactId>bcprov-jdk18on</artifactId>
         <version>${bouncycastle.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>animal-sniffer-annotations</artifactId>
+        <version>${animal-sniffer.version}</version>
+        <optional>true</optional>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -482,7 +489,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <version>1.20</version>
+        <version>${animal-sniffer.version}</version>
         <executions>
           <execution>
             <phase>test</phase>

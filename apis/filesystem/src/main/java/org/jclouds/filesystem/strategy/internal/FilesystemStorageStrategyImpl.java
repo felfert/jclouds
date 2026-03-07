@@ -63,6 +63,8 @@ import jakarta.inject.Named;
 import javax.inject.Provider;
 
 import com.google.common.base.Strings;
+import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
+
 import org.jclouds.blobstore.ContainerNotFoundException;
 import org.jclouds.blobstore.KeyNotFoundException;
 import org.jclouds.blobstore.LocalStorageStrategy;
@@ -379,6 +381,7 @@ public class FilesystemStorageStrategyImpl implements LocalStorageStrategy {
       return blobNames;
    }
 
+   @IgnoreJRERequirement // animal-sniffer lacks support for java > 8
    @Override
    public Blob getBlob(final String container, final String key) {
       filesystemContainerNameValidator.validate(container);
@@ -495,6 +498,7 @@ public class FilesystemStorageStrategyImpl implements LocalStorageStrategy {
       return blob;
    }
 
+   @IgnoreJRERequirement // animal-sniffer lacks support for java > 8
    private void writeCommonMetadataAttr(UserDefinedFileAttributeView view, Blob blob) throws IOException {
       ContentMetadata metadata = blob.getMetadata().getContentMetadata();
       writeStringAttributeIfPresent(view, XATTR_CACHE_CONTROL, metadata.getCacheControl());
