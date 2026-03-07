@@ -13,10 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: CI
+name: PR-Check
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -31,4 +31,4 @@ jobs:
           distribution: temurin
           cache: maven
       - name: Build
-        run: mvn -B -Dstyle.color=always clean verify checkstyle:checkstyle -B -Dstyle.color=always -q -Dorg.slf4j.simpleLogger.defaultLogLevel=ERROR -Pdoc,src
+        run: mvn -B -Dstyle.color=always clean verify checkstyle:checkstyle
