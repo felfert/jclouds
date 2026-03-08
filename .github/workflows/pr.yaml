@@ -33,8 +33,14 @@ jobs:
           distribution: temurin
           cache: maven
       - name: Build
-        run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle | tee ../build.log
-
+        id: build
+        run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle 2>&1 | tee ../build.log
+      - name: Notify
+        if failure()
+        run: |
+          which ansi2html
+          echo "build log:"
+          ls -l ../build.log
 
   scan:
       uses: ./.github/workflows/security-scan.yaml

@@ -23,7 +23,7 @@ jobs:
   scan:
     runs-on: ubuntu-latest # Provides `jq`
     steps:
-      - name: Check out plugin
+      - name: Check out
         uses: actions/checkout@v6
 
       - name: Set up Java
