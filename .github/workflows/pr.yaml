@@ -37,10 +37,8 @@ jobs:
           cache: "$CACHE"
       - name: Build
         run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle
-  
-    security-scan:
-      uses: ./.github/workflows/security-scan.yaml
-      with:
-        java-version:
-          java-version: "$JAVA_VERSION"
-          java-cache: "$CACHE"
+      - uses: ./.github/workflows/security-scan.yaml
+        with:
+          java-version:
+            java-version: "$JAVA_VERSION"
+            java-cache: "$CACHE"
