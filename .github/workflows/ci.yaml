@@ -35,4 +35,4 @@ jobs:
           distribution: temurin
           cache: maven
       - name: Build
-        run: mvn -B -Dstyle.color=always clean verify checkstyle:checkstyle -B -Dstyle.color=always -q -Dorg.slf4j.simpleLogger.defaultLogLevel=ERROR -Pdoc,src
+        run: mvn -B -Dstyle.color=always clean verify checkstyle:checkstyle -Dorg.slf4j.simpleLogger.defaultLogLevel=ERROR -Pdoc,src
