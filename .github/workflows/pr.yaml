@@ -21,6 +21,9 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  DEBIAN_FRONTEND: noninteractive
+
 jobs:
 
   build:
@@ -32,11 +35,13 @@ jobs:
           java-version: "17"
           distribution: temurin
           cache: maven
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y colorized-logs
       - name: Build
         id: build
         run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle 2>&1 | tee ../build.log
-      - name: Notify
-        run: |
+      - run: |
           echo "ansi2html:"
           which ansi2html
           echo "build log:"
