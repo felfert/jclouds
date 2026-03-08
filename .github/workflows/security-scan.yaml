@@ -34,16 +34,16 @@ jobs:
           cache: ${{ inputs.java-cache }}
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: java
 
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+        uses: github/codeql-action/autobuild@v4
 
       - name: Run CodeQL
         id: generate-sarif
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
         with:
           category: Security Scan
           upload: failure-only
@@ -55,6 +55,6 @@ jobs:
           name: Security Scan SARIF
 
       - name: Upload Scan Result
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           category: Security Scan
