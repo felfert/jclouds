@@ -7,12 +7,12 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      uses: dawidd6/action-send-mail@v11
-      with:
-        server_address: ${{secrets.SMTP_SERVER}}
-        ignore_cert: false
-        username: ${{secrets.SMTP_USER}}
-        password: ${{secrets.SMTP_PASSWORD}}
-        to: jclouds@fritz-elfert.de
-        subject: "Test notification"
-        body: "Plain body"
+      - uses: dawidd6/action-send-mail@v11
+        with:
+          server_address: ${{secrets.SMTP_SERVER}}
+          ignore_cert: false
+          username: ${{secrets.SMTP_USER}}
+          password: ${{secrets.SMTP_PASSWORD}}
+          to: jclouds@fritz-elfert.de
+          subject: "Test notification"
+          body: "Plain body"
