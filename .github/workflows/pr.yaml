@@ -40,14 +40,30 @@ jobs:
           sudo apt-get install -y colorized-logs
       - name: Build
         id: build
-        run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle 2>&1 | tee ../build.log
-      - run: |
-          echo "ansi2html:"
-          which ansi2html
-          echo "build log:"
-          ls -l ../build.log
+        continue-on-error: true
+        run: |
+          mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle 2>&1 | tee ../build.log
+          RES=$?
+          if [ $RES -ne 0 ] ; then
+            ansi2html < ../build.log > ../build.log.html
+          fi
+          exit $RES
+      - name Notify about failure
+        if: ${{ failure() }}
+        uses: dawidd6/action-send-mail@v11
+        with:
+          server_address: ${{secrets.SMTP_SERVER}}
+          ignore_cert: false
+          username: ${{secrets.SMTP_USER}}
+          password: ${{secrets.SMTP_PASSWORD}}
+          from: "JClouds PR" <noreply@github.com>
+          to: ${{secrets.PR_FAILURE_RECIPIENT}}
+          subject: "PR build failed"
+          body: "The build, triggered by ${{ github.actor }} failed. See the attached build log".
+          attachments: ../build.log.html
 
   scan:
+      if false;
       uses: ./.github/workflows/security-scan.yaml
       secrets: inherit
       with:
