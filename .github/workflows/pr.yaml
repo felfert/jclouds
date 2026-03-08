@@ -34,3 +34,8 @@ jobs:
           cache: maven
       - name: Build
         run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle | tee ../build.log
+      - uses: ./.github/workflows/security-scan.yaml
+        secrets: inherit
+        with:
+          java-version: "17"
+          java-cache: maven
