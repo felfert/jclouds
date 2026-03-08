@@ -19,7 +19,7 @@ on:
   pull_request:
     branches:
       - master
-i
+
 env:
   JAVA_VERSION: 17
   CACHE: maven
