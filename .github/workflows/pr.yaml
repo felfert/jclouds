@@ -35,35 +35,28 @@ jobs:
           java-version: "17"
           distribution: temurin
           cache: maven
-      - run: |
-          sudo apt-get update
-          sudo apt-get install -y colorized-logs
+      - run: sudo apt-get update > /dev/null && sudo apt-get install -y colorized-logs > /dev/null
       - name: Build
         id: build
+        run: bash .github/workflows/prbuild.sh $GITHUB_OUTPUT
         continue-on-error: true
-        run: |
-          mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle 2>&1 | tee ../build.log
-          RES=$?
-          if [ $RES -ne 0 ] ; then
-            ansi2html < ../build.log > ../build.log.html
-          fi
-          exit $RES
-      - name Notify about failure
-        if: ${{ failure() }}
+      - name: Notify
         uses: dawidd6/action-send-mail@v11
         with:
           server_address: ${{secrets.SMTP_SERVER}}
+          server_port: 465
           ignore_cert: false
-          username: ${{secrets.SMTP_USER}}
-          password: ${{secrets.SMTP_PASSWORD}}
-          from: "JClouds PR" <noreply@github.com>
-          to: ${{secrets.PR_FAILURE_RECIPIENT}}
+          username: ${{ secrets.SMTP_USER }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          from: "JClouds PR"
+          to: ${{ secrets.PR_FAILURE_RECIPIENT }}
           subject: "PR build failed"
-          body: "The build, triggered by ${{ github.actor }} failed. See the attached build log".
-          attachments: ../build.log.html
+          body: ${{ format('The PR build, triggered by {0} failed. See the attached build log.', github.triggering_actor) }}
+          attachments: ${{ steps.build.outputs.loghtml }}
+      - run: exit 1
 
   scan:
-      if false;
+      name: Security scan
       uses: ./.github/workflows/security-scan.yaml
       secrets: inherit
       with:
