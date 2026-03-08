@@ -36,8 +36,8 @@ jobs:
         id: build
         run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle 2>&1 | tee ../build.log
       - name: Notify
-        if failure()
         run: |
+          echo "ansi2html:"
           which ansi2html
           echo "build log:"
           ls -l ../build.log
