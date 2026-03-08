@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: PR-Check
+name: Security-Scan
 
 on:
   pull_request:
@@ -27,10 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-java@v5
+      - uses: ./security-scan.yaml
         with:
           java-version: "17"
-          distribution: temurin
-          cache: maven
-      - name: Build
-        run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle
+          java-cache: maven
