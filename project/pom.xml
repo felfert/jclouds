@@ -49,6 +49,7 @@
     <url>https://github.com/felfert/jclouds/issues</url>
   </issueManagement>
 
+  blubb - temporary intentional error to test workflow error handling
 
   <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">
     <connection>scm:git:https://github.com/felfert/jclouds.git</connection>
