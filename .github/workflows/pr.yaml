@@ -20,15 +20,27 @@ on:
     branches:
       - master
 
+env:
+  JAVA_VERSION: 17
+  CACHE: maven
+
 jobs:
+
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-java@v5
         with:
-          java-version: "17"
+          java-version: "$JAVA_VERSION"
           distribution: temurin
-          cache: maven
+          cache: "$CACHE"
       - name: Build
         run: mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle
+  
+    security-scan:
+      uses: ./.github/workflows/security-scan.yaml
+      with:
+        java-version:
+          java-version: "$JAVA_VERSION"
+          java-cache: "$CACHE"
