@@ -7,13 +7,15 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: dawidd6/action-send-mail@v11
+      - uses: felfert/action-send-mail@misc-fixes
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           ignore_cert: false
           username: ${{secrets.SMTP_USER}}
           password: ${{secrets.SMTP_PASSWORD}}
-          from: "Jclouds notification"
-          to: jclouds@fritz-elfert.de
+          from: 'Jclouds PR <noreply@fritz-elfert.de>'
+          to: jclouds@fritz-elfert.de,
           subject: "Test notification"
           body: "Plain body"
+          nodemailerlog: true
+          nodemailerdebug: true
