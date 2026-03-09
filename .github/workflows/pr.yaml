@@ -53,7 +53,8 @@ jobs:
           subject: "PR build failed"
           body: ${{ format('The PR build, triggered by {0} failed. See the attached build log.', github.triggering_actor) }}
           attachments: ${{ steps.build.outputs.loghtml }}
-      - run: exit 1
+      - if: ${{ steps.build.outputs.loghtml != '' }}
+        run: exit 1
 
   scan:
       name: Security scan
