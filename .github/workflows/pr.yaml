@@ -35,25 +35,27 @@ jobs:
           java-version: "17"
           distribution: temurin
           cache: maven
-      - run: sudo apt-get update > /dev/null && sudo apt-get install -y colorized-logs > /dev/null
+      - run: sudo apt-get update > /dev/null && sudo apt-get install -y colorized-logs python3-subprocess-tee > /dev/null
       - name: Build
         id: build
-        run: bash .github/workflows/prbuild.sh $GITHUB_OUTPUT
+        run: .github/scripts/tee2log ../build.log $GITHUB_OUTPUT mvn -B -fae -Dstyle.color=always clean verify checkstyle:checkstyle
         continue-on-error: true
       - name: Notify
+        if: ${{ steps.build.outputs.loghtml != '' }}
         uses: dawidd6/action-send-mail@v11
         with:
           server_address: ${{secrets.SMTP_SERVER}}
-          server_port: 465
+          server_port: 587
           ignore_cert: false
           username: ${{ secrets.SMTP_USER }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          from: "JClouds PR"
+          from: 'JClouds PR <noreply@fritz-elfert.de>'
           to: ${{ secrets.PR_FAILURE_RECIPIENT }}
           subject: "PR build failed"
           body: ${{ format('The PR build, triggered by {0} failed. See the attached build log.', github.triggering_actor) }}
           attachments: ${{ steps.build.outputs.loghtml }}
-      - run: exit 1
+      - if: ${{ steps.build.outputs.loghtml != '' }}
+        run: exit 1
 
   scan:
       name: Security scan
