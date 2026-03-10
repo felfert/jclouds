@@ -7,7 +7,7 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: felfert/action-send-mail@fix-234
+      - uses: felfert/action-send-mail@sslv3
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
