@@ -18,5 +18,4 @@ jobs:
           subject: "Test notification"
           body: "Plain body"
           envelope_from: noreply@github.com
-          nodemailerlog: true
           nodemailerdebug: true
