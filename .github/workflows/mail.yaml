@@ -14,7 +14,7 @@ jobs:
           username: ${{secrets.SMTP_USER}}
           password: ${{secrets.SMTP_PASSWORD}}
           from: 'Jclouds PR <noreply@fritz-elfert.de>'
-          to: jclouds@fritz-elfert.de,
+          to: jclouds@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
           envelope_from: noreply@github.com
