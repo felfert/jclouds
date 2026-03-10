@@ -17,6 +17,6 @@ jobs:
           to: jclouds@fritz-elfert.de,
           subject: "Test notification"
           body: "Plain body"
-          envelopeFrom: noreply@github.com
+          envelope_from: noreply@github.com
           nodemailerlog: true
           nodemailerdebug: true
