@@ -19,6 +19,6 @@ jobs:
           bcc: a2@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
-          envelope_from: noreply@github.com
-          envelope_to: foo@fritz-elfert.de, bar@fritz-elfert.de, bar@fritz-elfert.de
+          #envelope_from: noreply@github.com
+          #envelope_to: foo@fritz-elfert.de, bar@fritz-elfert.de, bar@fritz-elfert.de
           nodemailerdebug: true
