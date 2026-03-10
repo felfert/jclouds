@@ -10,6 +10,7 @@ jobs:
       - uses: felfert/action-send-mail@fix-envelope
         with:
           server_address: ${{secrets.SMTP_SERVER}}
+          port: 587
           ignore_cert: false
           username: ${{secrets.SMTP_USER}}
           password: ${{secrets.SMTP_PASSWORD}}
