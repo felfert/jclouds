@@ -12,8 +12,9 @@ jobs:
   notify1:
     runs-on: ubuntu-latest
     steps:
-      - uses: felfert/action-send-mail@parser
-        if:  ${{ github.event.inputs.testfrom == '' }}
+      - name: without
+        if:  ${{ github.event.inputs.testfrom == '' || github.event.inputs.testfrom == '' }}
+        uses: felfert/action-send-mail@parser
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
@@ -26,8 +27,9 @@ jobs:
           body: "Plain body"
           envelope_to: 'Fritz Elfert <me@fritz-elfert.de>, Someone Else <whonows@fritz-elfert.de>'
           nodemailerdebug: true
-      - uses: felfert/action-send-mail@parser
-        if:  ${{ github.event.inputs.testfrom != '' && github.event.inputs.testto != '' }}
+      - name: with
+        if: ${{ github.event.inputs.testfrom != '' && github.event.inputs.testto != '' }}
+        uses: felfert/action-send-mail@parser
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
