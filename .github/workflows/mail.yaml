@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: felfert/action-send-mail@parser
-        if:  $${ github.event.inputs.testfrom == '' }}
+        if:  ${{ github.event.inputs.testfrom == '' }}
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
@@ -25,14 +25,14 @@ jobs:
           envelope_to: 'Fritz Elfert <me@fritz-elfert.de>, Someone Else <whonows@fritz-elfert.de>'
           nodemailerdebug: true
       - uses: felfert/action-send-mail@parser
-        if:  $${ github.event.inputs.testfrom != '' }}
+        if:  ${{ github.event.inputs.testfrom != '' }}
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
           ignore_cert: false
           username: ${{secrets.SMTP_USER}}
           password: ${{secrets.SMTP_PASSWORD}}
-          from: $${ github.event.inputs.testfrom }}
+          from: ${ github.event.inputs.testfrom }}
           to: me@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
