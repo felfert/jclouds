@@ -2,12 +2,16 @@ name: Notify
 
 on:
   workflow_dispatch:
+    inputs:
+      testfrom:
+        required: false
 
 jobs:
-  notify:
+  notify1:
     runs-on: ubuntu-latest
     steps:
       - uses: felfert/action-send-mail@parser
+        if:  $${ github.event.inputs.testfrom == '' }}
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
@@ -15,6 +19,20 @@ jobs:
           username: ${{secrets.SMTP_USER}}
           password: ${{secrets.SMTP_PASSWORD}}
           from: 'Jclouds PR <noreply@github.com>'
+          to: me@fritz-elfert.de
+          subject: "Test notification"
+          body: "Plain body"
+          envelope_to: 'Fritz Elfert <me@fritz-elfert.de>, Someone Else <whonows@fritz-elfert.de>'
+          nodemailerdebug: true
+      - uses: felfert/action-send-mail@parser
+        if:  $${ github.event.inputs.testfrom != '' }}
+        with:
+          server_address: ${{secrets.SMTP_SERVER}}
+          server_port: 587
+          ignore_cert: false
+          username: ${{secrets.SMTP_USER}}
+          password: ${{secrets.SMTP_PASSWORD}}
+          from: $${ github.event.inputs.testfrom }}
           to: me@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
