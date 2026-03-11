@@ -5,6 +5,8 @@ on:
     inputs:
       testfrom:
         required: false
+      testto:
+        required: false
 
 jobs:
   notify1:
@@ -25,7 +27,7 @@ jobs:
           envelope_to: 'Fritz Elfert <me@fritz-elfert.de>, Someone Else <whonows@fritz-elfert.de>'
           nodemailerdebug: true
       - uses: felfert/action-send-mail@parser
-        if:  ${{ github.event.inputs.testfrom != '' }}
+        if:  ${{ github.event.inputs.testfrom != '' && github.event.inputs.testto != '' }}
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
@@ -36,5 +38,5 @@ jobs:
           to: me@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
-          envelope_to: 'Fritz Elfert <me@fritz-elfert.de>, Someone Else <whonows@fritz-elfert.de>'
+          envelope_to:  ${{ github.event.inputs.testto }}
           nodemailerdebug: true
