@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: without
         if:  ${{ github.event.inputs.testfrom == '' || github.event.inputs.testto == '' }}
-        uses: felfert/action-send-mail@parser
+        uses: felfert/action-send-mail@fix-234
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
@@ -29,7 +29,7 @@ jobs:
           nodemailerdebug: true
       - name: with
         if: ${{ github.event.inputs.testfrom != '' && github.event.inputs.testto != '' }}
-        uses: felfert/action-send-mail@parser
+        uses: felfert/action-send-mail@fix-234
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
