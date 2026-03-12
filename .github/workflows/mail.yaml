@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: without
-        if:  ${{ github.event.inputs.testfrom == '' || github.event.inputs.testfrom == '' }}
+        if:  ${{ github.event.inputs.testfrom == '' || github.event.inputs.testto == '' }}
         uses: felfert/action-send-mail@parser
         with:
           server_address: ${{secrets.SMTP_SERVER}}
@@ -25,7 +25,7 @@ jobs:
           to: me@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
-          envelope_to: 'Fritz Elfert <me@fritz-elfert.de>, Someone Else <whonows@fritz-elfert.de>'
+          envelope_to: foo, bar, baz, 1@2
           nodemailerdebug: true
       - name: with
         if: ${{ github.event.inputs.testfrom != '' && github.event.inputs.testto != '' }}
