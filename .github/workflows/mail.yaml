@@ -25,7 +25,7 @@ jobs:
           to: me@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
-          envelope_from: myself,
+          envelope_from: fritz@fritz-elfert.de,
           envelope_to: foo, bar, <me@fritz-elfert.de>, baz,, <me@fritz-elfert.de>,
           nodemailerdebug: true
       - name: with
