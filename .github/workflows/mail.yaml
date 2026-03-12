@@ -25,7 +25,7 @@ jobs:
           to: me@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
-          envelope_to: foo, bar, baz, 1@2
+          envelope_to: foo, bar, baz, <me@fritz-elfert.de>
           nodemailerdebug: true
       - name: with
         if: ${{ github.event.inputs.testfrom != '' && github.event.inputs.testto != '' }}
