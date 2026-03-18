@@ -21,7 +21,7 @@ jobs:
           ignore_cert: false
           username: ${{secrets.SMTP_USER}}
           password: ${{secrets.SMTP_PASSWORD}}
-          from: 'Jclouds PR <noreply@github.com>'
+          from: Jclouds PR
           to: me@fritz-elfert.de
           subject: "Test notification"
           body: "Plain body"
