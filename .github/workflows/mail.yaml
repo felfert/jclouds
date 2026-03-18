@@ -27,5 +27,5 @@ jobs:
           subject: "Test notification"
           body: "Plain body"
           envelope_from: ${{ github.event.inputs.envelopefrom }}
-          envelope_to: ${{ github.event.inputs.envelopeto }},
+          envelope_to: ${{ github.event.inputs.envelopeto }}
           nodemailerdebug: true
