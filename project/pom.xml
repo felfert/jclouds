@@ -175,7 +175,7 @@
 
     <!-- General dependency versions -->
     <gson.version>2.13.2</gson.version>
-    <guava.version>33.4.0-jre</guava.version>
+    <guava.version>33.5.0-jre</guava.version>
     <guice.version>6.0.0</guice.version>
 
     <bouncycastle.version>1.81</bouncycastle.version>
