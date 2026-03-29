@@ -42,7 +42,7 @@ jobs:
         continue-on-error: true
       - name: Notify
         if: ${{ steps.build.outputs.loghtml != '' }}
-        uses: dawidd6/action-send-mail@v11
+        uses: dawidd6/action-send-mail@v16
         with:
           server_address: ${{secrets.SMTP_SERVER}}
           server_port: 587
