@@ -198,7 +198,7 @@
     <!-- Test dependency versions -->
     <testng.version>7.5.1</testng.version>
     <xmlunit.version>1.6</xmlunit.version>
-    <assertj-core.version>3.23.1</assertj-core.version>
+    <assertj-core.version>3.27.7</assertj-core.version>
     <assertj-guava.version>1.3.1</assertj-guava.version>
 
     <!-- Static analysis dependency versions -->
